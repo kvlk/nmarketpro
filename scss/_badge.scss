@@ -1,0 +1,43 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 16px 8px 0;
+    padding: 7px 16px;
+    line-height: 18px;
+    border-radius: 50px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+    
+    &_success {
+        background: $color-success-background;
+        color: $color-success-text;
+    }
+    &_danger {
+        background: $color-danger-background;
+        color: $color-danger-text;
+    }
+
+    &__icon {
+        flex-grow: 0;
+        width: 13px;
+        height: 13px;
+        margin-right: 7px;
+        background: no-repeat 50% 50%;
+
+        &_success {
+            background-image: url("../images/icon-check.svg");
+        }
+        
+        &_danger {
+            background-image: url("../images/icon-cross.svg");
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .badge {
+        margin: 8px 16px 0 0;
+    }
+}

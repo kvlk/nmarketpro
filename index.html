@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>План квартиры</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if IE]><link href="/css/ie.css" rel="stylesheet"><![endif]-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="modal__wrapper">
+        <div class="modal modal__apartment-card">        
+
+            <div class="apartment-card__info">
+                <div class="apartment-card__image">
+                    <img src="images/apartment-scheme.svg" alt="2-к квартира, план">
+                </div>
+
+                <div class="apartment-card__description">
+                    <h3 class="apartment-card__title">2-к квартира</h3>
+
+                    <dl class="apartment-card__properties">
+                        <dt>Этаж</dt>
+                        <dd>3 из 19</dd>
+                        <dt>Общая площадь</dt>
+                        <dd>32,24 м²</dd>
+                        <dt>Жилая площадь</dt>
+                        <dd>22,24 м²</dd>
+                        <dt>Высота потолков</dt>
+                        <dd>3,2 м</dd>
+                        <dt>Отделка</dt>
+                        <dd>Предчистовая</dd>
+                        <dt>Площадь кухни</dt>
+                        <dd>3 из 19</dd>
+                    </dl>
+
+                    <ul class="apartment-card__client-checks">
+                        <li class="badge badge_success"><span class="badge__icon badge__icon_success"></span> Вы были на просмотре</li>
+                        <li class="badge badge_danger"><span class="badge__icon badge__icon_danger"></span> Дом аккредитован другим банком</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="apartment-card__block2">
+                <div class="apartment-card__price">
+                    <div class="apartment-card__reserved">
+                        <div>Ваша цена по брони до <span class="reserved__expiration-date">19 сентября</span></div>
+                        <div class="apartment-card__reserved-price">3 312 666 Р</div>
+                    </div>
+                    <div class="apartment-card__current-price">
+                        <div>Текущая цена у застройщика</div>
+                        <div>дороже на <span class="price__difference">324 825 Р</span></div>
+                    </div>
+                </div>
+
+                <div class="apartment-card__controls">
+                    <button type="button" class="btn btn_large btn_full-width"><span class="btn__icon icon_key"></span> Выбрать для покупки</button>
+                    <a href="#" class="apartment-card__close icon_close" aria-label="Закрыть"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test__buttons" style="display: none; padding: 40px; text-align: center;">
+        <button id="btn--open-property-card" type="button" class="btn btn_large">Показать карточку объекта</button>
+    </div>
+
+    <script>
+        $(".apartment-card__close").on("click", function(e) {
+            e.preventDefault();
+            $(this).closest(".modal__wrapper").hide();
+            $(this).closest(".modal").hide();
+            $(".test__buttons").delay(300).fadeIn(500);       
+        });
+        
+        $("#btn--open-property-card").on("click", function() {
+            $(".test__buttons").hide();
+            $(".modal__wrapper").fadeIn(300);
+            $(".modal__apartment-card").fadeIn(300);
+        });
+    </script>
+</body>
+</html>
